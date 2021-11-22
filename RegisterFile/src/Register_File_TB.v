@@ -15,7 +15,7 @@ module Register_File_TB;
 
 reg clk_tb = 0;
 reg reset_tb;
-reg RegWrite_tb;
+reg Reg_Write_tb;
 reg [4:0] Write_Register_tb;
 reg [4:0] Read_Register_1_tb;
 reg [4:0] Read_Register_2_tb;
@@ -24,7 +24,7 @@ wire [31:0] Read_Data_1_tb;
 wire [31:0] Read_Data_2_tb;
   
   
-RegisterFile
+Register_File
 #(
 	.N(32)
 )
@@ -32,13 +32,13 @@ DUV
 (
 	.clk(clk_tb),
 	.reset(reset_tb),
-	.Reg_Write_i(Reg_Write_i_tb),
-	.Write_Register_i(Write_Register_i_tb),
-	.Read_Register_1_i(Read_Register_1_i_tb),
-	.Read_Register_2_i(Read_Register_2_i_tb),
-	.Write_Data_i(Write_Data_i_tb),
-	.Read_Data_1_i(Read_Data_1_i_tb),
-	.Read_Data_2_i(Read_Data2_i_tb)
+	.Reg_Write_i(Reg_Write_tb),
+	.Write_Register_i(Write_Register_tb),
+	.Read_Register_1_i(Read_Register_1_tb),
+	.Read_Register_2_i(Read_Register_2_tb),
+	.Write_Data_i(Write_Data_tb),
+	.Read_Data_1_o(Read_Data_1_tb),
+	.Read_Data_2_o(Read_Data_2_tb)
 
 );
 /*********************************************************/
@@ -53,8 +53,8 @@ initial begin // reset generator
 end
 
 initial begin
-	#0 Reg_Write_tb = 0;
-	#5 Reg_Write_tb = 5;
+	#0  Reg_Write_tb = 0;
+	#5  Reg_Write_tb = 1;
 	#50 Reg_Write_tb = 0;
 end
 
@@ -62,7 +62,7 @@ end
 initial begin
 	#0 Read_Register_1_tb = 0;
 	#4 Read_Register_1_tb = 0;
-	#70 Read_Register_1_tb = 2;
+	#10 Read_Register_1_tb = 2;
 	#10 Read_Register_1_tb = 4;
 	#10 Read_Register_1_tb = 25;
 	#10 Read_Register_1_tb = 31;
@@ -72,8 +72,8 @@ end
 
 initial begin
 	#0 Read_Register_2_tb = 0;
-	#4 Read_Register_2__tb = 0;
-	#70 Read_Register_2_tb = 2;
+	#4 Read_Register_2_tb = 0;
+	#10 Read_Register_2_tb = 2;
 	#10 Read_Register_2_tb = 4;
 	#10 Read_Register_2_tb = 25;
 	#10 Read_Register_2_tb = 31;
@@ -90,7 +90,6 @@ initial begin
 
 end
 
-
 /*********************************************************/
 initial begin // reset generator
 	#0 Write_Data_tb = 3;
@@ -103,4 +102,4 @@ end
 
 /*********************************************************/
 
-endmodule
+endmodule 

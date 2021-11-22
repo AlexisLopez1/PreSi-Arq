@@ -1,9 +1,8 @@
 module encoder_32(
-	input  [4:5] selector_i, 
+	input  [4:0] selector_i, 
 	output reg[31:0] data_o
 );
 	always @(selector_i) begin
-		data_o = 0;
 		case (selector_i)
 			 5'b00000: begin
             data_o[0] = 1'b1;

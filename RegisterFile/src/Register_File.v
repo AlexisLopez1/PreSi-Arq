@@ -8,10 +8,10 @@ module Register_File
 	input  [4:0] Write_Register_i,
 	input  [4:0] Read_Register_1_i,
 	input  [4:0] Read_Register_2_i,
-	input  [N:0] Write_Data_i,
+	input  [N-1:0] Write_Data_i,
 	
-	output [N:0] Read_Data_1_o,
-	output [N:0] Read_Data_2_o
+	output [N-1:0] Read_Data_1_o,
+	output [N-1:0] Read_Data_2_o
 );
 	wire [31:0] enc;
 	wire [31:0] q0,  q1,  q2,  q3,  q4,  q5,  q6,  q7, 
@@ -61,7 +61,7 @@ module Register_File
 		.in0(q0),   .in1(q1),   .in2(q2),   .in3(q3),   .in4(q4),   .in5(q5),   .in6(q6),   .in7(q7), 
 		.in8(q8),   .in9(q9),   .in10(q10), .in11(q11), .in12(q12), .in13(q13), .in14(q14), .in15(q15), 
 		.in16(q16), .in17(q17), .in18(q18), .in19(q19), .in20(q20), .in21(q21), .in22(q22), .in23(q23), 
-		.in24(q24), .in25(q25), .in26(q26), .in27(q27), .in28(q28), .in29(q29), .in30(q30), .in31(q32),
+		.in24(q24), .in25(q25), .in26(q26), .in27(q27), .in28(q28), .in29(q29), .in30(q30), .in31(q31),
 		.selector_i(Read_Register_1_i),
 		.data_o(Read_Data_1_o)
 	);
@@ -70,7 +70,7 @@ module Register_File
 		.in0(q0),   .in1(q1),   .in2(q2),   .in3(q3),   .in4(q4),   .in5(q5),   .in6(q6),   .in7(q7), 
 		.in8(q8),   .in9(q9),   .in10(q10), .in11(q11), .in12(q12), .in13(q13), .in14(q14), .in15(q15), 
 		.in16(q16), .in17(q17), .in18(q18), .in19(q19), .in20(q20), .in21(q21), .in22(q22), .in23(q23), 
-		.in24(q24), .in25(q25), .in26(q26), .in27(q27), .in28(q28), .in29(q29), .in30(q30), .in31(q32),
+		.in24(q24), .in25(q25), .in26(q26), .in27(q27), .in28(q28), .in29(q29), .in30(q30), .in31(q31),
 		.selector_i(Read_Register_2_i),
 		.data_o(Read_Data_2_o)
 	);

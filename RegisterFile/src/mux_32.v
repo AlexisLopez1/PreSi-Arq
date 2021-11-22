@@ -7,7 +7,7 @@ module mux4to1(
 	output reg [31:0] data_o
 );
 
-   always @ (selector_i) begin
+   always @ (*) begin
       case(selector_i)
          5'b00000: begin
             data_o = in0;
