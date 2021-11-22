@@ -1,28 +1,14 @@
-/******************************************************************
-* Description
-*	This is the verifaction envioroment ofr testeting the register file.
-* Version:
-*	1.0
-* Author:
-*	Dr. José Luis Pizano Escalante
-* email:
-*	luispizano@iteso.mx
-* Date:
-*	12/06/2015
-******************************************************************/
-
 module Register_File_TB;
 
-reg clk_tb = 0;
-reg reset_tb;
-reg Reg_Write_tb;
-reg [4:0] Write_Register_tb;
-reg [4:0] Read_Register_1_tb;
-reg [4:0] Read_Register_2_tb;
-reg [31:0] Write_Data_tb;
+reg         clk_tb = 0;
+reg         reset_tb;
+reg         Reg_Write_tb;
+reg  [4:0]  Write_Register_tb;
+reg  [4:0]  Read_Register_1_tb;
+reg  [4:0]  Read_Register_2_tb;
+reg  [31:0] Write_Data_tb;
 wire [31:0] Read_Data_1_tb;
 wire [31:0] Read_Data_2_tb;
-  
   
 Register_File
 #(
@@ -41,65 +27,62 @@ DUV
 	.Read_Data_2_o(Read_Data_2_tb)
 
 );
-/*********************************************************/
-initial // Clock generator
-  begin
-    forever #2 clk_tb = !clk_tb;
-  end
-/*********************************************************/
-initial begin // reset generator
-	#0 reset_tb = 0;
-	#5 reset_tb = 1;
-end
+
+task print_result(
+    reg         Reg_Write,
+    reg  [4:0]  Write_Register, Read_Register_1, Read_Register_2,
+    reg  [31:0] Write_Data,
+    wire [31:0] Read_Data_1, Read_Data_2
+);
+    $display($time,"  Write_data = %d,  Write_Register = %d,  Reg_Write = %d,  
+    Read_Register_1 = %d, Read_Data_1 = %d,  Read_Register_2 = %d, Read_Data_2 = %d",
+    Write_Data, Write_Register, Reg_Write, Read_Register_1, Read_Data_1, Read_Register_2, Read_Data_2);
+endtask
 
 initial begin
 	#0  Reg_Write_tb = 0;
-	#5  Reg_Write_tb = 1;
-	#50 Reg_Write_tb = 0;
-end
-
-
-initial begin
-	#0 Read_Register_1_tb = 0;
-	#4 Read_Register_1_tb = 0;
-	#10 Read_Register_1_tb = 2;
-	#10 Read_Register_1_tb = 4;
-	#10 Read_Register_1_tb = 25;
-	#10 Read_Register_1_tb = 31;
-
-end
-
-
-initial begin
-	#0 Read_Register_2_tb = 0;
-	#4 Read_Register_2_tb = 0;
-	#10 Read_Register_2_tb = 2;
-	#10 Read_Register_2_tb = 4;
-	#10 Read_Register_2_tb = 25;
-	#10 Read_Register_2_tb = 31;
-
+	#10  Reg_Write_tb = 1;
+    #75  Reg_Write_tb = 0;
 end
 
 initial begin
-	#0 Write_Register_tb = 0;
-	#4 Write_Register_tb = 0;
-	#10 Write_Register_tb = 2;
-	#10 Write_Register_tb = 4;
-	#10 Write_Register_tb = 25;
-	#10 Write_Register_tb = 31;
-
+    #0 Write_Data_tb = 3;
+    #0 Write_Register_tb = 1;
+    #0 Read_Register_1_tb = 1;
+    #0 Read_Register_2_tb = 1;
+    #4 print_result(Reg_Write_tb, Write_Register_tb, Read_Register_1_tb, Read_Register_2_tb, Write_Data_tb, Read_Data_1_tb, Read_Data_2_tb);
 end
 
-/*********************************************************/
-initial begin // reset generator
-	#0 Write_Data_tb = 3;
-	#4 Write_Data_tb = 3;
-	#10 Write_Data_tb = 7;
-	#10 Write_Data_tb = 20;
-	#10 Write_Data_tb = 6;
-	#10 Write_Data_tb = 78;
+initial begin
+    #20 Write_Data_tb = 8;
+    #20 Write_Register_tb = 7;
+    #20 Read_Register_1_tb = 7;
+    #20 Read_Register_2_tb = 7;
+    #24 print_result(Reg_Write_tb, Write_Register_tb, Read_Register_1_tb, Read_Register_2_tb, Write_Data_tb, Read_Data_1_tb, Read_Data_2_tb);
 end
 
-/*********************************************************/
+initial begin
+    #40 Write_Data_tb = 45;
+    #40 Write_Register_tb = 17;
+    #40 Read_Register_1_tb = 17;
+    #40 Read_Register_2_tb = 17;
+    #44 print_result(Reg_Write_tb, Write_Register_tb, Read_Register_1_tb, Read_Register_2_tb, Write_Data_tb, Read_Data_1_tb, Read_Data_2_tb);
+end
 
-endmodule 
+initial begin
+    #60 Write_Data_tb = 62;
+    #60 Write_Register_tb = 25;
+    #60 Read_Register_1_tb = 25;
+    #60 Read_Register_2_tb = 25;
+    #64 print_result(Reg_Write_tb, Write_Register_tb, Read_Register_1_tb, Read_Register_2_tb, Write_Data_tb, Read_Data_1_tb, Read_Data_2_tb);
+end
+
+initial begin
+    #80 Write_Data_tb = 89;
+    #80 Write_Register_tb = 30;
+    #80 Read_Register_1_tb = 30;
+    #80 Read_Register_2_tb = 30;
+    #84 print_result(Reg_Write_tb, Write_Register_tb, Read_Register_1_tb, Read_Register_2_tb, Write_Data_tb, Read_Data_1_tb, Read_Data_2_tb);
+end
+
+endmodule
