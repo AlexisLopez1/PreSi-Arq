@@ -5,19 +5,19 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	ff_d
 
-} {} {}} /home/alopez/Workspace/repos/PreSi-Arq/RegisterFile/src/encoder_32.v {1 {vlog -work work -stats=none /home/alopez/Workspace/repos/PreSi-Arq/RegisterFile/src/encoder_32.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module encoder_32
-
-Top level modules:
-	encoder_32
-
 } {} {}} /home/alopez/Workspace/repos/PreSi-Arq/RegisterFile/src/Register_File.v {1 {vlog -work work -stats=none /home/alopez/Workspace/repos/PreSi-Arq/RegisterFile/src/Register_File.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module Register_File
 
 Top level modules:
 	Register_File
+
+} {} {}} /home/alopez/Workspace/repos/PreSi-Arq/RegisterFile/src/encoder_32.v {1 {vlog -work work -stats=none /home/alopez/Workspace/repos/PreSi-Arq/RegisterFile/src/encoder_32.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module encoder_32
+
+Top level modules:
+	encoder_32
 
 } {} {}} /home/alopez/Workspace/repos/PreSi-Arq/RegisterFile/src/Register_File_TB.v {1 {vlog -work work -stats=none /home/alopez/Workspace/repos/PreSi-Arq/RegisterFile/src/Register_File_TB.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
