@@ -14,3 +14,4 @@
 *.project
 dvt_build.log
 .DS_Store
+*.pdf
