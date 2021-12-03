@@ -15,8 +15,8 @@ module Memory_System_TB;
 
 parameter MEMORY_DEPTH 	= 64;
 parameter DATA_WIDTH 	= 32;
+parameter Instruction_Range_i_tb = 32'h10010000;
 
-reg [32:0] Instruction_Range_i_tb;
 reg clk_tb = 0;
 reg Write_Enable_i_tb;
 reg [(DATA_WIDTH-1):0] 	Write_Data_i_tb;
@@ -28,11 +28,11 @@ Memory_System
 #
 (
 	.MEMORY_DEPTH(MEMORY_DEPTH),
-	.DATA_WIDTH(DATA_WIDTH)
+	.DATA_WIDTH(DATA_WIDTH),
+	.Instruction_Range_i(Instruction_Range_i_tb)
 )
 DUV
-(
-	.Instruction_Range_i(Instruction_Range_i_tb),
+(	
 	.clk(clk_tb),
 	.Write_Enable_i(Write_Enable_i_tb),
 	.Write_Data_i(Write_Data_i_tb),
@@ -48,7 +48,7 @@ initial // Clock generator
 
 initial begin
 	#0 Write_Enable_i_tb = 1'b0;
-	#0 Instruction_Range_i_tb = 32'h400000;
+	//#0 Instruction_Range_i_tb = 32'h400000;
 
 	#0 Address_i_tb = 32'h400000;
 	#50 Address_i_tb = 32'h400004;
@@ -63,7 +63,7 @@ end
 
 initial begin
 	#450 Write_Enable_i_tb = 1'b1;
-	#50 Instruction_Range_i_tb = 32'h10010000;
+	//#50 Instruction_Range_i_tb = 32'h10010000;
 	#50 Address_i_tb = 32'h10010000;
 	#50 Address_i_tb = 32'h10010008;
 	#50 Address_i_tb = 32'h1001000c;

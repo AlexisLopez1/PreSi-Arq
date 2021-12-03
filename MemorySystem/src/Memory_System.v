@@ -2,9 +2,10 @@ module Memory_System
 #
 (	
 	parameter MEMORY_DEPTH 	= 64,
-	parameter DATA_WIDTH 	= 32
+	parameter DATA_WIDTH 	= 32,
+	parameter Instruction_Range_i = 32'h400000
 )(
-	input [31:0] Instruction_Range_i,
+	//input [31:0] Instruction_Range_i,
 	input clk,
 	input Write_Enable_i,
 	input [(DATA_WIDTH-1):0] Write_Data_i,
