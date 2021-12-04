@@ -1,11 +1,4 @@
-/home/alopez/Workspace/repos/PreSi-Arq/MemorySystem/src/Memory_System_TB.v {1 {vlog -work work -stats=none /home/alopez/Workspace/repos/PreSi-Arq/MemorySystem/src/Memory_System_TB.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module Memory_System_TB
-
-Top level modules:
-	Memory_System_TB
-
-} {} {}} /home/alopez/Workspace/repos/PreSi-Arq/MemorySystem/src/Memory_MUX.v {2 {vlog -work work -stats=none /home/alopez/Workspace/repos/PreSi-Arq/MemorySystem/src/Memory_MUX.v
+/home/alopez/Workspace/repos/PreSi-Arq/MemorySystem/src/Memory_MUX.v {2 {vlog -work work -stats=none /home/alopez/Workspace/repos/PreSi-Arq/MemorySystem/src/Memory_MUX.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module Memory_MUX
 ** Warning: /home/alopez/Workspace/repos/PreSi-Arq/MemorySystem/src/Memory_MUX.v(17): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
@@ -13,12 +6,12 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	Memory_MUX
 
-} {} {}} /home/alopez/Workspace/repos/PreSi-Arq/MemorySystem/src/Instruction_Decoder.v {1 {vlog -work work -stats=none /home/alopez/Workspace/repos/PreSi-Arq/MemorySystem/src/Instruction_Decoder.v
+} {} {}} /home/alopez/Workspace/repos/PreSi-Arq/MemorySystem/src/Memory_System_TB.v {1 {vlog -work work -stats=none /home/alopez/Workspace/repos/PreSi-Arq/MemorySystem/src/Memory_System_TB.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module Instruction_Decoder
+-- Compiling module Memory_System_TB
 
 Top level modules:
-	Instruction_Decoder
+	Memory_System_TB
 
 } {} {}} /home/alopez/Workspace/repos/PreSi-Arq/MemorySystem/src/Priority_Decoder.v {1 {vlog -work work -stats=none /home/alopez/Workspace/repos/PreSi-Arq/MemorySystem/src/Priority_Decoder.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -27,12 +20,19 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	Priority_Decoder
 
-} {} {}} /home/alopez/Workspace/repos/PreSi-Arq/MemorySystem/src/Memory_System.v {1 {vlog -work work -stats=none /home/alopez/Workspace/repos/PreSi-Arq/MemorySystem/src/Memory_System.v
+} {} {}} /home/alopez/Workspace/repos/PreSi-Arq/MemorySystem/src/Instruction_Decoder.v {1 {vlog -work work -stats=none /home/alopez/Workspace/repos/PreSi-Arq/MemorySystem/src/Instruction_Decoder.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module Memory_System
+-- Compiling module Instruction_Decoder
 
 Top level modules:
-	Memory_System
+	Instruction_Decoder
+
+} {} {}} /home/alopez/Workspace/repos/PreSi-Arq/MemorySystem/src/RAM/Data_Memory.v {1 {vlog -work work -stats=none /home/alopez/Workspace/repos/PreSi-Arq/MemorySystem/src/RAM/Data_Memory.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Data_Memory
+
+Top level modules:
+	Data_Memory
 
 } {} {}} /home/alopez/Workspace/repos/PreSi-Arq/MemorySystem/src/ROM/Program_Memory.v {1 {vlog -work work -stats=none /home/alopez/Workspace/repos/PreSi-Arq/MemorySystem/src/ROM/Program_Memory.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -41,11 +41,11 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	Program_Memory
 
-} {} {}} /home/alopez/Workspace/repos/PreSi-Arq/MemorySystem/src/RAM/Data_Memory.v {1 {vlog -work work -stats=none /home/alopez/Workspace/repos/PreSi-Arq/MemorySystem/src/RAM/Data_Memory.v
+} {} {}} /home/alopez/Workspace/repos/PreSi-Arq/MemorySystem/src/Memory_System.v {1 {vlog -work work -stats=none /home/alopez/Workspace/repos/PreSi-Arq/MemorySystem/src/Memory_System.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module Data_Memory
+-- Compiling module Memory_System
 
 Top level modules:
-	Data_Memory
+	Memory_System
 
 } {} {}}

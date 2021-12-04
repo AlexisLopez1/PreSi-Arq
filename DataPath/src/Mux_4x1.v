@@ -6,10 +6,10 @@ module Mux_4x1(
 
     always @(*) begin
         case (selector)
-            case 2'b00: begin data_out = in_0; end
-            case 2'b01: begin data_out = in_1; end
-            case 2'b10: begin data_out = in_2; end
-            case 2'b11: begin data_out = in_3; end
+            2'b00: begin data_out = in_0; end
+            2'b01: begin data_out = in_1; end
+            2'b10: begin data_out = in_2; end
+            2'b11: begin data_out = in_3; end
         endcase
     end
 

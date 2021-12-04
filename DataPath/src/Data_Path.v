@@ -21,8 +21,7 @@ module Data_Path
           ALUSrcA,
     input [1:0] ALUSrcB,
     input [3:0] ALUControl,
-    input PCSrc,
-          PCWrite
+    input PCSrc
 );
     wire [31:0] PC_i_w, PC_o_w;
     wire [31:0] Adr_w;
@@ -59,12 +58,12 @@ module Data_Path
         .MEMORY_DEPTH(MEMORY_DEPTH),
         .DATA_WIDTH(DATA_WIDTH),
         .Instruction_Range_i(Instruction_Range_i))
-    MEMORY_DEPTH(
+    MEMORY(
         .clk(clk),
         .Write_Enable_i(MemWrite),
         .Write_Data_i(Reg_B_W),
         .Address_i(Adr_w),
-        .Instruction_o(RD_w); //output
+        .Instruction_o(RD_w) //output
     );
 
     //Instr - Register
@@ -101,7 +100,7 @@ module Data_Path
     //Register File
     Register_File #(
         .N(DATA_WIDTH)
-    )(
+    )REGISTER_File(
         .clk(clk),
         .reset(reset),
         .Reg_Write_i(RegWrite),
@@ -125,7 +124,7 @@ module Data_Path
     //Sign Extend
     Sign_Extend SignImm(
         .data_i(Instr_w[15:0]), 
-        .data_o[SignImm_w]
+        .data_o(SignImm_w)
     );
 
     //<<2
@@ -156,7 +155,7 @@ module Data_Path
         .selector(ALUControl), 
         .a(SrcA_w), 
         .b(SrcB_w), 
-        .data_out(ALUResult_w)
+        .y(ALUResult_w)
     );
 
     //ALUOut - Register

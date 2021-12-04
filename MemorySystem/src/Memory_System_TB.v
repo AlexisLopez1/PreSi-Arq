@@ -15,7 +15,7 @@ module Memory_System_TB;
 
 parameter MEMORY_DEPTH 	= 64;
 parameter DATA_WIDTH 	= 32;
-parameter Instruction_Range_i_tb = 32'h10010000;
+parameter Instruction_Range_i_tb = 32'h400000;
 
 reg clk_tb = 0;
 reg Write_Enable_i_tb;

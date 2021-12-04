@@ -1,7 +1,7 @@
 module ALU (	 // ARITHMETIC UNIT
 	input [3:0]  selector,
 	input [31:0] a, b,
-	output reg	[31:0] 	y
+	output reg	[31:0] y
 );
 
 	always @ (*)
