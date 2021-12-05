@@ -10,7 +10,7 @@ module Data_Path
     //Output
     output [7:0] GPIO_o,
 
-    /********* Señales de Control *********/
+    /********* Control Signals *********/
     input PCWrite,
           IorD,
           MemWrite,
@@ -21,7 +21,10 @@ module Data_Path
           ALUSrcA,
     input [1:0] ALUSrcB,
     input [3:0] ALUControl,
-    input PCSrc
+    input PCSrc,
+    output [5:0] OP,
+    output [5:0] Funct, 
+    output [31:0] Result_o;
 );
     wire [31:0] PC_i_w, PC_o_w;
     wire [31:0] Adr_w;
@@ -36,6 +39,11 @@ module Data_Path
     wire [31:0] A_w, B_w;
     wire [31:0] SignImm_w;
     wire [31:0] LS_w;
+    wire [5:0] OP_w, Funct_w;
+
+    assign OP = Op_w;
+    assign Funct = Funct_w;
+    assign Result_o = ALUOut_w;
 
     //PC - Register
     Reg_Enable PROGRAM_COUNTER(
