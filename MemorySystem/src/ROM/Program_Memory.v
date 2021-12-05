@@ -12,13 +12,12 @@ module Program_Memory
 	reg [DATA_WIDTH-1:0] rom [MEMORY_DEPTH-1:0]; //ROM declaration
 	
 	initial begin
-		$readmemh("/home/alopez/Workspace/repos/PreSi-Arq/MemorySystem/src/text.dat", rom);
+		$readmemh("../assembly_code/program.dat", rom);
 	end
 	
 	always @ (Address_i) begin
 		if (Enable_i) begin
 			Instruction_o = rom[Address_i];
 		end
-		//$display($time," ROM: %h", Instruction_o);
 	end
 endmodule 
